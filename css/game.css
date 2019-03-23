@@ -1,5 +1,5 @@
 body{
-    background-color:#E87800;
+    background-color:#E04A25;
 }
 .background{
     display:flex;
@@ -7,7 +7,7 @@ body{
     width: 100%;
     height:55vh;
     border:1px solid black;
-    background-image: url("https://thumbs.gfycat.com/EarlyRealAustraliankelpie-small.gif");
+    background-image: url("https://s.aolcdn.com/hss/storage/midas/1c9e9f5ea64fe80b43ed4207cbae028b/200825673/gif_614x258_33bc34.gif");
     background-repeat:no-repeat;
     background-size:cover;
     background-position: bottom;
@@ -47,26 +47,33 @@ body{
 }
 .answer:hover{
     color:white;
-    background-color:#FF1502;
+    background-color:#EB0F0F;
 }
 
     
 
 .Health{
-    background-color: black;
+    background-color: #20990B;
+    
     width:100%;
     height:25px;
     position:fixed;
     display:flex;
-    color:white;
+    color:black;
+    font-weight:bold;
+    font-size:17px;
 }
 #YourHealth{
     width:50%;
+    background-color: #20990B;
+    border:2.5px solid black;
     
 }
 #EnemyHealth{
     width:50%;
     text-align: right;
+    background-color: #20990B;
+    border:2.5px solid black;
 }
 
 #enemyimage {

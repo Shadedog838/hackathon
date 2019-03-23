@@ -18,9 +18,9 @@ var game = [{
         correctanswer:0,
     },
 {
-        question: "What causes the Greenhouse Effect",
+        question: "What causes the Greenhouse Effect?",
         answers: [
-            "Gases that trap the suns' warmth in the atmosphere",
+            "Gases that trap the sun's warmth in the atmosphere",
             "Wifi",
             "Too Many Greenhouses!",
             "All of the Above"],
@@ -36,11 +36,11 @@ var game = [{
         correctanswer:3,
     },
      {
-        question: "Which of these gasses contribute most to the greenhouse effect",
+        question: "Which of these gasses contribute most to the greenhouse effect?",
         answers: [
-            "Methane"
-            ,"Carbon Dioxide"
-            , "Water Vapor",
+            "Methane",
+            "Carbon Dioxide",
+            "Water Vapor",
             "All of the Above"],
         correctanswer:2,
     },
@@ -54,7 +54,7 @@ var game = [{
         correctanswer:3,
     },
      {
-        question: "How can you prevent the greenhouse effect",
+        question: "How can you prevent the greenhouse effect?",
         answers: [
             "Listen to Skia music"
             ,"Cut some trees"
@@ -63,21 +63,21 @@ var game = [{
         correctanswer:2,
     },
      {
-        question: "Should you leave all the lights on in your house even if your not their?",
+        question: "Should you leave all the lights on in your house even if your not there?",
         answers: [
             "YES"
             ,"NO"],
         correctanswer:1,
     },
     {
-        question: "Planting tress will help reduce the greenhouse effect",
+        question: "Planting trees will help reduce the greenhouse effect?",
         answers: [
             "TRUE"
             ,"FALSE"],
         correctanswer:0,
     },
     {
-        question: "What are landfills creating",
+        question: "What are landfills creating?",
         answers: [
             "Land struture to hold waste"
             ,"Filling Land",
@@ -86,7 +86,7 @@ var game = [{
         correctanswer:0,
     },
     {
-        question: "How much trash does the U.S produce every year (Tons)",
+        question: "How much trash does the U.S produce every year (Tons)?",
         answers: [
             "254 million"
             ,"255 million",
@@ -95,7 +95,7 @@ var game = [{
         correctanswer:0,
     },
     {
-        question: "What does deforestation cause",
+        question: "What does deforestation cause?",
         answers: [
             "Mudslides"
             ,"Trees",
@@ -111,7 +111,7 @@ var game = [{
         correctanswer:1,
     },
     {
-        question: "What causes Water Pollution",
+        question: "What causes Water Pollution?",
         answers: [
             "Nutrient rich soil runoff"
             ,"Oil Spills",
@@ -120,7 +120,7 @@ var game = [{
         correctanswer:3,
     },
     {
-        question: "What causes the most Water Pollutions",
+        question: "What causes the most Water Pollutions?",
         answers: [
             "Human and Animal Waste"
             ,"Oil Spills",
@@ -129,7 +129,7 @@ var game = [{
         correctanswer:2,
     },
     {
-        question: "True or False, Discharging Oils and Grease is great for the enviroment",
+        question: "True or False, Discharging Oils and Grease is great for the enviroment?",
         answers: [
             "False"
             ,"True",],
@@ -145,7 +145,7 @@ var game = [{
         correctanswer:0,
     },
     {
-        question: "True or False,land pollution doesn't contribute to the Greenhouse effect",
+        question: "True or False,land pollution doesn't contribute to the Greenhouse effect?",
         answers: [
             "True"
             ,"False",
@@ -155,8 +155,8 @@ var game = [{
     
 ]
 function health(){
-    $("#YourHealth").html(You);
-    $("#EnemyHealth").html(Enemy);
+    $("#YourHealth").html("YOU "+You);
+    $("#EnemyHealth").html("ENEMY "+Enemy);
 }
 
 function loadquestion(x){
@@ -175,7 +175,7 @@ loadquestion(question);
 
 $("body").on("click", ".answer", function(){
 var attr = $(this).attr("answer");
-console.log(game[0].correctanswer);
+console.log(game[question].correctanswer);
 console.log(attr);
 $("#Answers").empty();
 question++;
@@ -189,6 +189,14 @@ if(attr==game[question].correctanswer){
     alert("wrong");
     You=You-25;
 };
+if(You===0){
+    alert("You Lose!");
+    window.location.href = "index.html";
+}
+if(Enemy===0){
+    alert("You Win!");
+    window.location.href = "index.html";
+}
 health();
 });
 
